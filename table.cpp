@@ -6,33 +6,41 @@ using namespace std;
 
 
 table::table(){
-
+	a = NULL;
+	m = 0;
 }
 
 table::~table(){
-
+	delete[] a;
+	a = NULL;
 }
 
-void table::insert(double x, double *&T){
-
+int table::hash(double x){
+	int index;
+	return index % m;
 }
 
-void table::remove(double x, double *&T){
+void table::insert(double x, list *T[]){
+	
+}
+
+void table::remove(double x, list *T[]){
 
 }
 
 void table::print(){
-
+	
 }
 
-bool table::find(double x, double *&T){
+bool table::find(double x, list *T[]){
 
 }
 
 void table::build(ifstream& file){
-
+	file >> m;
+	a = new list[m];
 }
 
-double*& table::getArray(){
+list*& table::getArray(){
 
 }

@@ -1,7 +1,6 @@
 #ifndef TABLE_H
 #define TABLE_H
 
-
 #include "list.h"
 #include <stdlib.h>
 #include <iostream>
@@ -9,18 +8,21 @@
 using namespace std;
 
 class table{
-	private:
-		double a;
-	public:
-		table();
-		~table();
-		void insert(double x, double *&T);
-		void remove(double x, double *&T);
-		void print();
-		bool find(double x, double *&T);
-		void build(ifstream& file);
-		double*& getArray();
-		
+private:
+	list* a;
+	int m;
+
+public:
+	table();
+	~table();
+	int hash(double x);
+	void insert(double x, list *T[]);
+	void remove(double x, list *T[]);
+	void print();
+	bool find(double x, list *T[]);
+	void build(ifstream& file);
+	list*& getArray();
+
 };
 
 
