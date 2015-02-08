@@ -1,10 +1,10 @@
 #include <iostream>
-#include "list.h"
+#include "table.h"
 using namespace std;
 
 int main(){
 
-	list l;
+	table l;
 	ifstream fileName;
 	fileName.open("data.txt");
 	l.build(fileName);
@@ -19,11 +19,11 @@ int main(){
 		switch (input) {
 		case 1:
 			cin >> x;
-			l.insert(x, l.getHead());
+			l.insert(x, &l.getArray());
 			break;
 		case 2:
 			cin >> x;
-			l.erase(x, l.getHead());
+			l.remove(x, &l.getArray());
 			break;
 		case 3:
 			l.print();
