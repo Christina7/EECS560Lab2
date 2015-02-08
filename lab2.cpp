@@ -6,7 +6,8 @@ int main(){
 
 	table l;
 	ifstream fileName;
-	fileName.open("data.txt");
+	fileName.open("C:\\Users\\Christina\\Documents\\Visual Studio 2013\\Projects\\eecs560Lab2\\Debug\\data.txt");
+	//fileName.open("data.txt");
 	l.build(fileName);
 
 	int input;
@@ -19,11 +20,11 @@ int main(){
 		switch (input) {
 		case 1:
 			cin >> x;
-			l.insert(x, &l.getArray());
+			l.insert(x);
 			break;
 		case 2:
 			cin >> x;
-			l.remove(x, &l.getArray());
+			l.remove(x);
 			break;
 		case 3:
 			l.print();

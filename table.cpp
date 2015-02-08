@@ -6,8 +6,8 @@ using namespace std;
 
 
 table::table(){
-	m = 0;
-	a = new list[m];
+	m = 10;
+	a = NULL;
 }
 
 table::~table(){
@@ -20,16 +20,16 @@ int table::hash(double x){
 	return index;
 }
 
-void table::insert(double x, list *T[]){
+void table::insert(double x){
 	int index = hash(x);
-	T[index]->insert(x, T[index]->getHead());
+	a[index].insert(x, a[index].getHead());
 }
 
-void table::remove(double x, list *T[]){
-	bool isThere = find(x, T);
+void table::remove(double x){
+	bool isThere = find(x);
 	int index = hash(x);
 	if (isThere == true){
-		T[index]->erase(x, T[index]->getHead());
+		a[index].erase(x, a[index].getHead());
 	}
 	else{
 		cout << "Number not in table";
@@ -44,16 +44,17 @@ void table::print(){
 	}
 }
 
-bool table::find(double x, list *T[]){
+bool table::find(double x){
 	return true;
 }
 
 void table::build(ifstream& file){
-	double item;
-	file >> m;
+	int item;
+	file >> item;
+	m = item;
 	a = new list[m];
 	while (file >> item){
-		insert(item, &a);
+		insert(item);
 	}
 }
 

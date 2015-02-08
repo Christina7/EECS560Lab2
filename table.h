@@ -16,10 +16,10 @@ public:
 	table();
 	~table();
 	int hash(double x);
-	void insert(double x, list *T[]);
-	void remove(double x, list *T[]);
+	void insert(double x);
+	void remove(double x);
 	void print();
-	bool find(double x, list *T[]);
+	bool find(double x);
 	void build(ifstream& file);
 	list*& getArray();
 
