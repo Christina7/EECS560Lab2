@@ -45,7 +45,18 @@ void table::print(){
 }
 
 bool table::find(double x){
-	return true;
+	int index = hash(x);
+	node* temp = a[index].getHead();
+	while (temp != NULL){
+		if (temp->data == x){
+			return true;
+		}
+		else{
+			temp = temp->next;
+		}
+	}
+	return false;
+
 }
 
 void table::build(ifstream& file){
